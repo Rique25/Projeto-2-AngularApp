@@ -1,0 +1,36 @@
+<mat-toolbar *ngIf="usuario">
+  <span routerLink="home">Vendas App</span>
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>density_small</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container id="container" class="container">
+  <mat-drawer #drawer mode="side">
+    <button routerLink="home" (click)="drawer.toggle()">
+      <mat-icon class="mat-18">home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button routerLink="cliente" (click)="drawer.toggle()">
+      <mat-icon class="mat-18">person</mat-icon>
+      <span>Cliente</span>
+    </button>
+    <button routerLink="servico" (click)="drawer.toggle()">
+      <mat-icon class="mat-18">build_circle</mat-icon>
+      <span>Serviço</span>
+    </button>
+    <button routerLink="auth" (click)="drawer.toggle()" (click)="logout()">
+      <mat-icon class="mat-18">logout</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button class="user" routerLink="/usuario/{{ id }}" (click)="drawer.toggle()">
+      <mat-icon class="mat-18">person</mat-icon>
+      <span>{{ usuario }}</span>
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+

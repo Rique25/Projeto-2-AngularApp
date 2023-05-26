@@ -1,0 +1,100 @@
+<button routerLink="/auth" class="back" mat-icon-button>
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="box">
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormUsuario">
+      <form [formGroup]="firstFormUsuario">
+        <div class="inputs">
+          <mat-form-field>
+            <mat-label>Usuário</mat-label>
+            <input matInput formControlName="usuario" required>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('usuario')?.touched">
+            <span *ngIf="firstFormUsuario.get('usuario')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo usuário é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput formControlName="senha" minlength="8" required>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('senha')?.touched">
+            <span *ngIf="firstFormUsuario.get('senha')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo senha é obrigatório e deve conter no mínimo 8 caracteres
+            </span>
+          </ng-container>
+        </div>
+        <div class="step-buttons">
+          <button mat-raised-button matStepperNext [disabled]="firstFormUsuario.invalid">Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormUsuario">
+      <form [formGroup]="secondFormUsuario">
+        <div class="inputs-second">
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" placeholder="Nome completo" required>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('nome')?.touched">
+            <span *ngIf="firstFormUsuario.get('nome')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo nome é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="email@email.com" required>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('email')?.touched">
+            <span *ngIf="firstFormUsuario.get('email')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo email é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option *ngFor="let genero of generos" [value]="genero.toUpperCase()">
+                {{ genero }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('sexo')?.touched">
+            <span *ngIf="firstFormUsuario.get('sexo')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo nome é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="datepicker" formControlName="dataNascimento">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancelar</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Aplicar</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+          <ng-container *ngIf="firstFormUsuario.get('dataNascimento')?.touched">
+            <span *ngIf="firstFormUsuario.get('dataNascimento')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+              * O campo nome é obrigatório
+            </span>
+          </ng-container>
+        </div>
+        <div class="step-buttons">
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext (click)="onSubmit()">Cadastrar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <div class="done">
+        <h1>Bem vindo!</h1>
+        <div>
+          <button mat-button routerLink="/">Continuar</button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

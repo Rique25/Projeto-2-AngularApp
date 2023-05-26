@@ -1,0 +1,53 @@
+<app-header [msgComponent]="msgComponent"
+            [component]="component">
+</app-header>
+
+<div class="box">
+  <button routerLink="/cliente" class="back" mat-icon-button>
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <mat-card>
+    <mat-card-content>
+
+      <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+        <div class="input-box">
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. Dorivaldo" formControlName="nome">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>CPF</mat-label>
+            <input type="number" matInput placeholder="Ex. 00000000000" formControlName="cpf" maxlength="11">
+          </mat-form-field>
+        </div>
+
+        <div class="sexo">
+          <label>Sexo</label> <br>
+          <mat-radio-group formControlName="sexo">
+            <mat-radio-button [value]="0" checked="true">
+              Masculino
+            </mat-radio-button>
+            <mat-radio-button [value]="1">
+              Feminino
+            </mat-radio-button>
+            <mat-radio-button [value]="2">
+              Outro
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="buttons">
+          <button mat-raised-button routerLink="/cliente">Cancelar</button>
+          <button [disabled]="formCliente.invalid"
+                  mat-raised-button color="primary">
+                  {{ cliente?.id ? 'Atualizar' : 'Cadastrar' }}
+          </button>
+
+        </div>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

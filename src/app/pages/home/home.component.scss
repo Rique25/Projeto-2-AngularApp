@@ -1,0 +1,30 @@
+main {
+  margin-left: 1vw;
+  background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  h1 {
+    font-size: 3.5vh;
+  }
+
+  mat-card {
+    font-size: 2vh;
+    width: 98%;
+    background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+    -webkit-text-fill-color: white;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  main {
+    h1 {
+      font-size: 3vh;
+    }
+
+    mat-card {
+      font-size: 1.5vh;
+    }
+  }
+}

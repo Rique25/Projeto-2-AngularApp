@@ -1,0 +1,66 @@
+main {
+  margin-left: 1vw;
+
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  h1 {
+    font-size: 5vh;
+  }
+
+  :nth-child(2) {
+    margin-left: 2vw;
+  }
+
+  button {
+    padding-top: 1vh;
+    border: none;
+    font-weight: 600;
+    font-size: 2vh;
+    cursor: pointer;
+
+    background-color: transparent;
+  }
+
+  button:hover {
+    background-image: linear-gradient( 135deg, #6877b1 10%, #123597 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+mat-card {
+  margin-left: 1vw;
+  width: 96vw;
+  font-size: 1vw;
+  background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+  -webkit-text-fill-color: white;
+
+  mat-card-content {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  main {
+    h1 {
+      font-size: 3vh;
+    }
+
+    button {
+      font-size: 1.5vh;
+    }
+  }
+  mat-card {
+    mat-card-content {
+      font-size: 1.5vh;
+    }
+  }
+}
+
+

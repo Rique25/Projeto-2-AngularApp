@@ -1,0 +1,199 @@
+.box {
+  margin-top: 5vh;
+  width: 100vw;
+  height: 90vh;
+
+  font-size: 1vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-stepper {
+    background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+    background-clip: text;
+    -webkit-background-clip: content-box;
+    -webkit-text-fill-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
+
+    width: 50%;
+    height: 60%;
+
+    input {
+      -webkit-text-fill-color: black;
+    }
+
+    mat-label {
+      -webkit-text-fill-color: black;
+    }
+
+    form {
+      width: 100%;
+      height: 95%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center ;
+    }
+
+    .inputs {
+      width: 100%;
+      margin-top: 5%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      mat-form-field {
+        width: 50%;
+        font-size: 1.2vw;
+      }
+    }
+
+    .inputs-second {
+      width: 100%;
+      margin-top: 2%;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1vw;
+
+      mat-form-field {
+        width: 45%;
+
+        -webkit-text-fill-color: black;
+      }
+    }
+
+      .step-buttons {
+        width: 100%;
+        height: 30%;
+
+        display: flex;
+        justify-content: flex-end;
+
+        margin-top: 3vh;
+
+        button {
+          background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+
+          height: 6vh;
+          width: 10vw;
+        }
+
+        :nth-child(2) {
+          margin-left: 0.5vw;
+        }
+      }
+
+    .done {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      margin-top: 5vh;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        button {
+          background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+
+          height: 6vh;
+          width: 8vw;
+        }
+      }
+    }
+  }
+}
+
+.back {
+  position: absolute;
+  margin: 5vh 0 0 5vw;
+
+  background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    mat-stepper {
+      width: 65%;
+
+      .inputs {
+        width: 100%;
+        margin-top: 5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        mat-form-field {
+          width: 100%;
+          font-size: 1.8vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .box {
+    mat-stepper {
+      width: 80%;
+
+      .inputs {
+        width: 100%;
+        margin-top: 5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        mat-form-field {
+          width: 100%;
+          font-size: 1.8vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .box {
+    mat-stepper {
+      width: 90%;
+
+      .inputs {
+        width: 80%;
+        margin-top: 5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        mat-form-field {
+          width: 100%;
+          font-size: 1.8vw;
+        }
+      }
+    }
+  }
+}

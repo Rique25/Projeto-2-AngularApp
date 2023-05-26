@@ -1,0 +1,142 @@
+.box {
+  margin-top: 5vh;
+  width: 100vw;
+  height: 90vh;
+
+  font-size: 1vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-card {
+    background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-card-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    height: 80%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input-box {
+      font-size: 2vh;
+
+      label {
+        font-size: 3vh;
+      }
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 2vh;
+      }
+
+      .valor {
+        width: 50%;
+      }
+
+      .descricao {
+        font-size: 2.5vh;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 40%;
+
+        text-area {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .buttons {
+      margin-top: 6vh;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        color: white;
+        background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+        width: 6vw;
+        height: 6vh;
+      }
+
+      :first-child {
+        background-image: none;
+        background-color: transparent;
+        margin-right: 1vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .box {
+    mat-card {
+      width: 40%;
+    }
+
+    form {
+      .input-box {
+        font-size: 1.8vh;
+      }
+      .sexo {
+        font-size: 1.8vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .box {
+    mat-card {
+      width: 60%;
+    }
+
+    form {
+      .input-box {
+        font-size: 1.5vh;
+      }
+      .sexo {
+        font-size: 1.5vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .box {
+    mat-card {
+      width: 80%;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,41 @@
+<div class="box">
+
+  <mat-card>
+    <h1>Login</h1>
+    <mat-card-content>
+
+      <form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+        <div class="input-box">
+          <ng-container *ngIf="formUsuario.get('usuario')?.touched">
+            <span *ngIf="formUsuario.get('usuario')?.errors">
+              * O campo usuário é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Usuário</mat-label>
+            <input matInput placeholder="Ex. ZéPequeno" formControlName="usuario">
+          </mat-form-field>
+          <ng-container *ngIf="formUsuario.get('senha')?.touched">
+            <span *ngIf="formUsuario.get('senha')?.errors">
+              * O campo senha é obrigatório
+            </span>
+          </ng-container>
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput formControlName="senha">
+          </mat-form-field>
+        </div>
+
+        <div class="buttons">
+          <button [disabled]="formUsuario.invalid"
+                  mat-raised-button color="primary">
+                  Login
+          </button>
+        </div>
+      </form>
+
+    </mat-card-content>
+    <span>Ainda não é usuário? <a routerLink="/auth/sign">Clique aqui!</a></span>
+  </mat-card>
+
+</div>
