@@ -37,3 +37,7 @@ $Vendas-app-theme: mat.define-light-theme((
 
 html, body { height: 100vh; width: 100vw; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.backdropBackground {
+  background-image: linear-gradient( 94.3deg,  rgb(37, 45, 80) 10.9%, rgba(81,84,115,1) 87.1% );
+}

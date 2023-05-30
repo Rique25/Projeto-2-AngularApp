@@ -42,7 +42,7 @@ export class FormComponent implements OnInit {
 
     if (id) {
       this.clienteService.getById(id, localStorage.getItem('user_id'))
-        .subscribe( res => {
+        .subscribe( (res: any) => {
           this.cliente = res;
           this.setValues();
         });

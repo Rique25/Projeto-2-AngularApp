@@ -25,7 +25,7 @@
     </button>
     <button class="user" routerLink="/usuario/{{ id }}" (click)="drawer.toggle()">
       <mat-icon class="mat-18">person</mat-icon>
-      <span>{{ usuario }}</span>
+      <span>{{ usuario?.usuario }}</span>
     </button>
   </mat-drawer>
   <mat-drawer-content>

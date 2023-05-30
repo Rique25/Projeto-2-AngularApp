@@ -1,5 +1,6 @@
 export class Usuario {
 
+  private id?: string;
   private usuario?: string;
   private senha?: string;
   private nome?: string;
@@ -7,6 +8,14 @@ export class Usuario {
   private dataNascimento?: Date;
   private sexo?: string;
   private perfil?: string;
+
+  public getId() {
+    return this.id;
+  }
+
+  public setId(id: string) {
+    this.id = id;
+  }
 
   public getUsuario() {
     return this.usuario;

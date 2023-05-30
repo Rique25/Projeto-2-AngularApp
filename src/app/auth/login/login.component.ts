@@ -36,7 +36,8 @@ export class LoginComponent {
       .subscribe({
         next: (res: any) => {
           localStorage.setItem("access_token", JSON.stringify(res.token));
-          localStorage.setItem("user_id", res.usuario.id)
+          localStorage.setItem("user_id", JSON.stringify(res.usuario.id));
+          localStorage.setItem('usuario', JSON.stringify(res.usuario));
           this.router.navigate(['./']);
         },
         error: (err: any) => {

@@ -9,29 +9,44 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-  private URL: string = environment.URL + '/api';
+  //private URL: string = environment.URL + '/api';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  salvar(cliente: any): Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.URL}/cliente`, cliente);
+  salvar(cliente: any) {
+    return new Observable((observer) => {
+
+    });
+    //return this.http.post<Cliente>(`${this.URL}/cliente`, cliente);
   }
 
-  update(cliente: any): Observable<Cliente> {
-    return this.http.put<Cliente>(`${this.URL}/cliente/${cliente.getId()}`, cliente);
+  update(cliente: any) {
+    return new Observable((observer) => {
+
+    });
+    //return this.http.put<Cliente>(`${this.URL}/cliente/${cliente.getId()}`, cliente);
   }
 
   list(params: any, criadoPor: any) {
-    return this.http.get(`${this.URL}/cliente/${criadoPor}`);
+    return new Observable((observer) => {
+
+    });
+    //return this.http.get(`${this.URL}/cliente/${criadoPor}`);
   }
 
   getById(id: string, criadoPor: any) {
-    return this.http.get(`${this.URL}/cliente/${id}/${criadoPor}`);
+    return new Observable((observer) => {
+
+    });
+    //return this.http.get(`${this.URL}/cliente/${id}/${criadoPor}`);
   }
 
   delete(id: string) {
-    return this.http.delete(`${this.URL}/cliente/${id}`);
+    return new Observable((observer) => {
+
+    });
+    //return this.http.delete(`${this.URL}/cliente/${id}`);
   }
 }

@@ -74,7 +74,7 @@ export class UserComponent implements OnInit {
           this.dialog.open(DialogComponent, {
             data: {
               title: 'Erro!!',
-              msg: err
+              msg: err.error.errors
             }
           });
           console.log(err);
