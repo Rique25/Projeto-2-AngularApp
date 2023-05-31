@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
     this.activatedRoute.params
       .subscribe( (res: any) => id = res.id);
     if (id) {
-      this.servicoService.getById(id, localStorage.getItem('user_id'))
+      this.servicoService.getById(id, JSON.parse(localStorage.getItem('user_id') || ''))
       .subscribe({
         next: (res) => {
           this.servico = res;
@@ -59,7 +59,7 @@ export class FormComponent implements OnInit {
       this.msgComponent = 'Aqui você pode editar um serviço';
     }
 
-    this.clienteService.list({page: String, size: String, direction: String}, localStorage.getItem('user_id'))
+    this.clienteService.list({page: String, size: String, direction: String}, JSON.parse(localStorage.getItem('user_id') || ''))
       .subscribe( (res: any) => {
         this.clientes = res.content;
       });
@@ -71,7 +71,7 @@ export class FormComponent implements OnInit {
                           descricao: this.formServico.get('descricao')?.value,
                           cliente: this.formServico.get('cliente')?.value,
                           valor: this.formServico.get('valor')?.value,
-                          criadoPor: localStorage.getItem('user_id')
+                          criadoPor: JSON.parse(localStorage.getItem('user_id') || '')
                         };
 
     this.servicoService.create(servico)

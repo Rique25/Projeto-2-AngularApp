@@ -39,7 +39,7 @@ export class ListServicoComponent implements OnInit {
   }
 
   list() {
-    return this.servicoService.list({page: String, size: String, direction: String}, localStorage.getItem('user_id'))
+    return this.servicoService.list({page: String, size: String, direction: String}, JSON.parse(localStorage.getItem('user_id') || ''))
       .subscribe({
         next: (res: any) => this.servicos = res.content
       })

@@ -41,9 +41,9 @@ export class FormComponent implements OnInit {
       .subscribe( (res: any) => id = res.id);
 
     if (id) {
-      this.clienteService.getById(id, localStorage.getItem('user_id'))
+      this.clienteService.getById(id, JSON.parse(localStorage.getItem('user_id') || ''))
         .subscribe( (res: any) => {
-          this.cliente = res;
+          this.cliente = res[0];
           this.setValues();
         });
 
@@ -67,7 +67,7 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    const usuario: any = localStorage.getItem('user_id');
+    const usuario: any = JSON.parse(localStorage.getItem('user_id') || '');
     let cliente = {nome: this.formCliente.value.nome,
                    cpf:  this.formCliente.value.cpf,
                    sexo: this.numberToString(),
@@ -109,7 +109,7 @@ export class FormComponent implements OnInit {
   }
 
   update(cliente: any) {
-    cliente.setId(this.cliente?.id);
+    cliente.id = this.cliente?.id;
     this.clienteService
       .update(cliente)
       .subscribe({

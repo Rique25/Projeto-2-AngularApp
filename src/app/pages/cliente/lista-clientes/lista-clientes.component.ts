@@ -38,9 +38,11 @@ export class ListaClientesComponent implements OnInit {
 
   list() {
     this.isLoading = true;
-    return this.clienteService.list({page: String, size: String, direction: String}, localStorage.getItem('user_id'))
+    return this.clienteService.list({page: String, size: String, direction: String}, JSON.parse(localStorage.getItem('user_id') || ''))
       .subscribe({
         next: (res: any) => {
+          console.log(res);
+
           this.clientes = res.content;
           this.isLoading = false;
         },
