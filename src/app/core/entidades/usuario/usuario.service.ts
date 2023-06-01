@@ -29,10 +29,22 @@ export class UsuarioService {
     usuario.setDataNascimento(user.dataNascimento);
 
     let usuarios: Usuario[] = this.getUsuarios();
-    usuarios.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    let contain: boolean = false;
+    usuarios.forEach((user: any) => {
+      if (user.usuario === usuario.getUsuario() || user.email === usuario.getEmail()) {
+        contain = true;
+      }
+    });
+    if (!contain) {
+      usuarios.push(usuario);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      return new Observable((observer) => {
+        observer.next(usuario);
+      });
+    }
+
     return new Observable((observer) => {
-      observer.next(usuario);
+      observer.error('Usuário ou email já cadastrado!');
     });
     //return this.http.post(`${this.URL}/auth/signin`, usuario);
   }

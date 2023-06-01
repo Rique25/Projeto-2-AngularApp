@@ -11,7 +11,7 @@
             <input matInput formControlName="usuario" required>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('usuario')?.touched">
-            <span *ngIf="firstFormUsuario.get('usuario')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('usuario')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo usuário é obrigatório
             </span>
           </ng-container>
@@ -20,7 +20,7 @@
             <input type="password" matInput formControlName="senha" minlength="8" required>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('senha')?.touched">
-            <span *ngIf="firstFormUsuario.get('senha')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('senha')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo senha é obrigatório e deve conter no mínimo 8 caracteres
             </span>
           </ng-container>
@@ -38,7 +38,7 @@
             <input matInput formControlName="nome" placeholder="Nome completo" required>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('nome')?.touched">
-            <span *ngIf="firstFormUsuario.get('nome')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('nome')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo nome é obrigatório
             </span>
           </ng-container>
@@ -47,7 +47,7 @@
             <input type="email" matInput formControlName="email" placeholder="email@email.com" required>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('email')?.touched">
-            <span *ngIf="firstFormUsuario.get('email')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('email')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo email é obrigatório
             </span>
           </ng-container>
@@ -60,7 +60,7 @@
             </mat-select>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('sexo')?.touched">
-            <span *ngIf="firstFormUsuario.get('sexo')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('sexo')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo nome é obrigatório
             </span>
           </ng-container>
@@ -77,7 +77,7 @@
             </mat-datepicker>
           </mat-form-field>
           <ng-container *ngIf="firstFormUsuario.get('dataNascimento')?.touched">
-            <span *ngIf="firstFormUsuario.get('dataNascimento')?.errors" style="-webkit-text-fill-color: red; margin-top: 0;">
+            <span *ngIf="firstFormUsuario.get('dataNascimento')?.errors" style="-webkit-text-fill-color: red; margin-top: 0; font-size: 0.8rem">
               * O campo nome é obrigatório
             </span>
           </ng-container>

@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent, {
       data: {
         title: 'Olá. Seja bem vindo(a)!',
-        msg: 'Por motivos financeiros, este projeto não será conectado ao backend que eu desenvolvi.\nTodos os dados criados por você (usuário), serão salvos no localStorage do seu navegador.'
+        msg: 'Por motivos financeiros, este projeto não será conectado ao backend que eu desenvolvi.\nCom isso, o projeto teve que ser reformulado para que todos os dados criados por você (usuário), serão salvos no localStorage do seu navegador.\nVocê pode encontrar a versão original desse projeto e seu backend no meu github Rique25 no repositório Udemy'
       },
       backdropClass: 'backdropBackground'
     });
